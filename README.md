@@ -5,7 +5,7 @@
 
 ## 使用说明
 
-想必大家都行学习一下大名鼎鼎的 ffmpeg 命令行工具，了解 ffmpeg 命令行是如何运行的，升至想像调试 iOS 和 Android 程序那样调试 ffmpeg，增加断点等等，该项目为 macOS 的项目，通过 Xcode 进行 ffmpeg 命令行的调试
+想必大家都行学习一下大名鼎鼎的 ffmpeg 命令行工具，了解 ffmpeg 命令行是如何运行的，甚至想像调试 iOS 和 Android 程序那样调试 ffmpeg，增加断点等等，该项目为 macOS 的项目，通过 Xcode 进行 ffmpeg 命令行，随意调试
 
 ## 编译
 
@@ -25,7 +25,7 @@ make install
 
 ## RUN
 
-直接修改 main.m 中的 command 即可运行，开始你的学习和调试之旅吧
+直接修改 main.m 中的 command 命令行参数即可运行，开始你的学习和调试之旅吧
 
 ```c
     char command[] = "ffmpeg -i     input.mp4  -c  copy output.mp4";
