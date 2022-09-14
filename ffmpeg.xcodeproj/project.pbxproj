@@ -38,7 +38,6 @@
 		9CBC35A628D1C9DA00DB602B /* ffmpeg_hw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_hw.c; sourceTree = "<group>"; };
 		9CBC35AA28D1C9EC00DB602B /* opt_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = opt_common.c; sourceTree = "<group>"; };
 		9CBC35AC28D1CA2900DB602B /* ffmpeg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ffmpeg.entitlements; sourceTree = "<group>"; };
-		9CBC35EF28D1F18500DB602B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +78,6 @@
 				9CBC35A228D1C7AC00DB602B /* ffmpeg_opt.c */,
 				9CBC35AA28D1C9EC00DB602B /* opt_common.c */,
 				9CBC358228D1C1A900DB602B /* main.m */,
-				9CBC35EF28D1F18500DB602B /* README.md */,
 			);
 			path = ffmpeg;
 			sourceTree = "<group>";
