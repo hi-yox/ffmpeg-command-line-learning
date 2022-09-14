@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		9CBC358328D1C1A900DB602B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC358228D1C1A900DB602B /* main.m */; };
+		9CBC35A128D1C76500DB602B /* cmdutils.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC359F28D1C76500DB602B /* cmdutils.c */; };
+		9CBC35A328D1C7AC00DB602B /* ffmpeg_opt.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC35A228D1C7AC00DB602B /* ffmpeg_opt.c */; };
+		9CBC35A728D1C9DA00DB602B /* ffmpeg_mux.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC35A428D1C9D900DB602B /* ffmpeg_mux.c */; };
+		9CBC35A828D1C9DA00DB602B /* ffmpeg_filter.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC35A528D1C9DA00DB602B /* ffmpeg_filter.c */; };
+		9CBC35A928D1C9DA00DB602B /* ffmpeg_hw.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC35A628D1C9DA00DB602B /* ffmpeg_hw.c */; };
+		9CBC35AB28D1C9EC00DB602B /* opt_common.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC35AA28D1C9EC00DB602B /* opt_common.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +31,14 @@
 /* Begin PBXFileReference section */
 		9CBC357F28D1C1A900DB602B /* ffmpeg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ffmpeg; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CBC358228D1C1A900DB602B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9CBC359F28D1C76500DB602B /* cmdutils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmdutils.c; sourceTree = "<group>"; };
+		9CBC35A228D1C7AC00DB602B /* ffmpeg_opt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_opt.c; sourceTree = "<group>"; };
+		9CBC35A428D1C9D900DB602B /* ffmpeg_mux.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_mux.c; sourceTree = "<group>"; };
+		9CBC35A528D1C9DA00DB602B /* ffmpeg_filter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_filter.c; sourceTree = "<group>"; };
+		9CBC35A628D1C9DA00DB602B /* ffmpeg_hw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_hw.c; sourceTree = "<group>"; };
+		9CBC35AA28D1C9EC00DB602B /* opt_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = opt_common.c; sourceTree = "<group>"; };
+		9CBC35AC28D1CA2900DB602B /* ffmpeg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ffmpeg.entitlements; sourceTree = "<group>"; };
+		9CBC35EF28D1F18500DB602B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +71,15 @@
 		9CBC358128D1C1A900DB602B /* ffmpeg */ = {
 			isa = PBXGroup;
 			children = (
+				9CBC35AC28D1CA2900DB602B /* ffmpeg.entitlements */,
+				9CBC359F28D1C76500DB602B /* cmdutils.c */,
+				9CBC35A528D1C9DA00DB602B /* ffmpeg_filter.c */,
+				9CBC35A628D1C9DA00DB602B /* ffmpeg_hw.c */,
+				9CBC35A428D1C9D900DB602B /* ffmpeg_mux.c */,
+				9CBC35A228D1C7AC00DB602B /* ffmpeg_opt.c */,
+				9CBC35AA28D1C9EC00DB602B /* opt_common.c */,
 				9CBC358228D1C1A900DB602B /* main.m */,
+				9CBC35EF28D1F18500DB602B /* README.md */,
 			);
 			path = ffmpeg;
 			sourceTree = "<group>";
@@ -119,7 +141,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CBC35A328D1C7AC00DB602B /* ffmpeg_opt.c in Sources */,
+				9CBC35A828D1C9DA00DB602B /* ffmpeg_filter.c in Sources */,
+				9CBC35A128D1C76500DB602B /* cmdutils.c in Sources */,
+				9CBC35A928D1C9DA00DB602B /* ffmpeg_hw.c in Sources */,
 				9CBC358328D1C1A900DB602B /* main.m in Sources */,
+				9CBC35A728D1C9DA00DB602B /* ffmpeg_mux.c in Sources */,
+				9CBC35AB28D1C9EC00DB602B /* opt_common.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,9 +266,28 @@
 		9CBC358728D1C1A900DB602B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ffmpeg/ffmpeg.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67A85TH4HV;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/ffmpeg/5.1.1/include,
+					"${PROJECT_DIR}/ffmpeg-5.1.1/",
+					"${PROJECT_DIR}/ffmpeg-5.1.1/fftools",
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/ffmpeg/5.1.1/lib;
+				OTHER_LDFLAGS = (
+					"-I/usr/local/Cellar/ffmpeg/5.1.1/include",
+					"-L/usr/local/Cellar/ffmpeg/5.1.1/lib",
+					"-lavformat",
+					"-lavcodec",
+					"-lavutil",
+					"-lpostproc",
+					"-lswresample",
+					"-lswscale",
+					"-lavdevice",
+					"-lavfilter",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -248,9 +295,28 @@
 		9CBC358828D1C1A900DB602B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ffmpeg/ffmpeg.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67A85TH4HV;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/ffmpeg/5.1.1/include,
+					"${PROJECT_DIR}/ffmpeg-5.1.1/",
+					"${PROJECT_DIR}/ffmpeg-5.1.1/fftools",
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/ffmpeg/5.1.1/lib;
+				OTHER_LDFLAGS = (
+					"-I/usr/local/Cellar/ffmpeg/5.1.1/include",
+					"-L/usr/local/Cellar/ffmpeg/5.1.1/lib",
+					"-lavformat",
+					"-lavcodec",
+					"-lavutil",
+					"-lpostproc",
+					"-lswresample",
+					"-lswscale",
+					"-lavdevice",
+					"-lavfilter",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
